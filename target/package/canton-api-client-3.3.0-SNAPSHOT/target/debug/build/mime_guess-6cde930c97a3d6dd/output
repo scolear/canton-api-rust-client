@@ -1,0 +1,1 @@
+cargo:rustc-env=MIME_TYPES_GENERATED_PATH=/private/tmp/canton-test/target/package/canton-api-client-3.3.0-SNAPSHOT/target/debug/build/mime_guess-6cde930c97a3d6dd/out/mime_types_generated.rs
