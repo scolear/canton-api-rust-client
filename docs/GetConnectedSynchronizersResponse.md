@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**connected_synchronizers** | Option<[**Vec<models::ConnectedSynchronizer>**](ConnectedSynchronizer.md)> |  | [optional]
+**connected_synchronizers** | Option<[**Vec<models::ConnectedSynchronizer>**](ConnectedSynchronizer.md)> | Optional: can be empty | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
