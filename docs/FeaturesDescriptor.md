@@ -4,10 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**experimental** | Option<[**models::ExperimentalFeatures**](ExperimentalFeatures.md)> |  | [optional]
-**user_management** | Option<[**models::UserManagementFeature**](UserManagementFeature.md)> |  | [optional]
-**party_management** | Option<[**models::PartyManagementFeature**](PartyManagementFeature.md)> |  | [optional]
-**offset_checkpoint** | Option<[**models::OffsetCheckpointFeature**](OffsetCheckpointFeature.md)> |  | [optional]
+**experimental** | [**models::ExperimentalFeatures**](ExperimentalFeatures.md) |  | 
+**user_management** | [**models::UserManagementFeature**](UserManagementFeature.md) |  | 
+**party_management** | [**models::PartyManagementFeature**](PartyManagementFeature.md) |  | 
+**offset_checkpoint** | [**models::OffsetCheckpointFeature**](OffsetCheckpointFeature.md) |  | 
+**package_feature** | [**models::PackageFeature**](PackageFeature.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

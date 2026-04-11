@@ -6,9 +6,11 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_v2_idps_idp_id**](DefaultApi.md#delete_v2_idps_idp_id) | **DELETE** /v2/idps/{idp_id} | 
 [**delete_v2_users_user_id**](DefaultApi.md#delete_v2_users_user_id) | **DELETE** /v2/users/{user_id} | 
+[**get_v2_authenticated_user**](DefaultApi.md#get_v2_authenticated_user) | **GET** /v2/authenticated-user | 
 [**get_v2_idps**](DefaultApi.md#get_v2_idps) | **GET** /v2/idps | 
 [**get_v2_idps_idp_id**](DefaultApi.md#get_v2_idps_idp_id) | **GET** /v2/idps/{idp_id} | 
 [**get_v2_interactive_submission_preferred_package_version**](DefaultApi.md#get_v2_interactive_submission_preferred_package_version) | **GET** /v2/interactive-submission/preferred-package-version | 
+[**get_v2_package_vetting**](DefaultApi.md#get_v2_package_vetting) | **GET** /v2/package-vetting | 
 [**get_v2_packages**](DefaultApi.md#get_v2_packages) | **GET** /v2/packages | 
 [**get_v2_packages_package_id**](DefaultApi.md#get_v2_packages_package_id) | **GET** /v2/packages/{package_id} | 
 [**get_v2_packages_package_id_status**](DefaultApi.md#get_v2_packages_package_id_status) | **GET** /v2/packages/{package_id}/status | 
@@ -36,13 +38,25 @@ Method | HTTP request | Description
 [**post_v2_commands_submit_and_wait_for_reassignment**](DefaultApi.md#post_v2_commands_submit_and_wait_for_reassignment) | **POST** /v2/commands/submit-and-wait-for-reassignment | 
 [**post_v2_commands_submit_and_wait_for_transaction**](DefaultApi.md#post_v2_commands_submit_and_wait_for_transaction) | **POST** /v2/commands/submit-and-wait-for-transaction | 
 [**post_v2_commands_submit_and_wait_for_transaction_tree**](DefaultApi.md#post_v2_commands_submit_and_wait_for_transaction_tree) | **POST** /v2/commands/submit-and-wait-for-transaction-tree | 
+[**post_v2_contracts_contract_by_id**](DefaultApi.md#post_v2_contracts_contract_by_id) | **POST** /v2/contracts/contract-by-id | 
+[**post_v2_dars**](DefaultApi.md#post_v2_dars) | **POST** /v2/dars | 
+[**post_v2_dars_validate**](DefaultApi.md#post_v2_dars_validate) | **POST** /v2/dars/validate | 
 [**post_v2_events_events_by_contract_id**](DefaultApi.md#post_v2_events_events_by_contract_id) | **POST** /v2/events/events-by-contract-id | 
 [**post_v2_idps**](DefaultApi.md#post_v2_idps) | **POST** /v2/idps | 
 [**post_v2_interactive_submission_execute**](DefaultApi.md#post_v2_interactive_submission_execute) | **POST** /v2/interactive-submission/execute | 
+[**post_v2_interactive_submission_executeandwait**](DefaultApi.md#post_v2_interactive_submission_executeandwait) | **POST** /v2/interactive-submission/executeAndWait | 
+[**post_v2_interactive_submission_executeandwaitfortransaction**](DefaultApi.md#post_v2_interactive_submission_executeandwaitfortransaction) | **POST** /v2/interactive-submission/executeAndWaitForTransaction | 
+[**post_v2_interactive_submission_preferred_packages**](DefaultApi.md#post_v2_interactive_submission_preferred_packages) | **POST** /v2/interactive-submission/preferred-packages | 
 [**post_v2_interactive_submission_prepare**](DefaultApi.md#post_v2_interactive_submission_prepare) | **POST** /v2/interactive-submission/prepare | 
+[**post_v2_package_vetting**](DefaultApi.md#post_v2_package_vetting) | **POST** /v2/package-vetting | 
+[**post_v2_package_vetting_list**](DefaultApi.md#post_v2_package_vetting_list) | **POST** /v2/package-vetting/list | 
+[**post_v2_package_vetting_update**](DefaultApi.md#post_v2_package_vetting_update) | **POST** /v2/package-vetting/update | 
 [**post_v2_packages**](DefaultApi.md#post_v2_packages) | **POST** /v2/packages | 
 [**post_v2_parties**](DefaultApi.md#post_v2_parties) | **POST** /v2/parties | 
+[**post_v2_parties_external_allocate**](DefaultApi.md#post_v2_parties_external_allocate) | **POST** /v2/parties/external/allocate | 
+[**post_v2_parties_external_generate_topology**](DefaultApi.md#post_v2_parties_external_generate_topology) | **POST** /v2/parties/external/generate-topology | 
 [**post_v2_state_active_contracts**](DefaultApi.md#post_v2_state_active_contracts) | **POST** /v2/state/active-contracts | 
+[**post_v2_updates**](DefaultApi.md#post_v2_updates) | **POST** /v2/updates | 
 [**post_v2_updates_flats**](DefaultApi.md#post_v2_updates_flats) | **POST** /v2/updates/flats | 
 [**post_v2_updates_transaction_by_id**](DefaultApi.md#post_v2_updates_transaction_by_id) | **POST** /v2/updates/transaction-by-id | 
 [**post_v2_updates_transaction_by_offset**](DefaultApi.md#post_v2_updates_transaction_by_offset) | **POST** /v2/updates/transaction-by-offset | 
@@ -101,6 +115,36 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**serde_json::Value**](serde_json::Value.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_v2_authenticated_user
+
+> models::GetUserResponse get_v2_authenticated_user(identity_provider_id)
+
+
+Get current user details (uses user for JWT).
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**identity_provider_id** | Option<**String**> |  |  |
+
+### Return type
+
+[**models::GetUserResponse**](GetUserResponse.md)
 
 ### Authorization
 
@@ -204,6 +248,36 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## get_v2_package_vetting
+
+> models::ListVettedPackagesResponse get_v2_package_vetting(list_vetted_packages_request)
+
+
+Lists which participant node vetted what packages on which synchronizer. This endpoint (GET /package-vetting) is deprecated and will be removed in a future release. Please use POST /package-vetting/list instead.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**list_vetted_packages_request** | [**ListVettedPackagesRequest**](ListVettedPackagesRequest.md) |  | [required] |
+
+### Return type
+
+[**models::ListVettedPackagesResponse**](ListVettedPackagesResponse.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## get_v2_packages
 
 > models::ListPackagesResponse get_v2_packages()
@@ -293,7 +367,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_v2_parties
 
-> models::ListKnownPartiesResponse get_v2_parties(page_size, page_token)
+> models::ListKnownPartiesResponse get_v2_parties(identity_provider_id, filter_party, page_size, page_token)
 
 
 List all known parties.
@@ -303,6 +377,8 @@ List all known parties.
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
+**identity_provider_id** | Option<**String**> |  |  |
+**filter_party** | Option<**String**> |  |  |
 **page_size** | Option<**i32**> | maximum number of elements in a returned page |  |
 **page_token** | Option<**String**> | token - to continue results from a given page, leave empty to start from the beginning of the list, obtain token from the result of previous page |  |
 
@@ -383,7 +459,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_v2_state_connected_synchronizers
 
-> models::GetConnectedSynchronizersResponse get_v2_state_connected_synchronizers(party, participant_id)
+> models::GetConnectedSynchronizersResponse get_v2_state_connected_synchronizers(party, participant_id, identity_provider_id)
 
 
 Get connected synchronizers
@@ -393,8 +469,9 @@ Get connected synchronizers
 
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
-**party** | **String** |  | [required] |
+**party** | Option<**String**> |  |  |
 **participant_id** | Option<**String**> |  |  |
+**identity_provider_id** | Option<**String**> |  |  |
 
 ### Return type
 
@@ -471,7 +548,7 @@ This endpoint does not need any parameter.
 > models::JsGetTransactionTreeResponse get_v2_updates_transaction_tree_by_id_update_id(update_id, parties)
 
 
-Get transaction tree by  id
+Get transaction tree by id. Provided for backwards compatibility, it will be removed in the Canton version 3.5.0, use v2/updates/update-by-id instead.
 
 ### Parameters
 
@@ -502,7 +579,7 @@ Name | Type | Description  | Required | Notes
 > models::JsGetTransactionTreeResponse get_v2_updates_transaction_tree_by_offset_offset(offset, parties)
 
 
-Get transaction tree by offset
+Get transaction tree by offset. Provided for backwards compatibility, it will be removed in the Canton version 3.5.0, use v2/updates/update-by-offset instead.
 
 ### Parameters
 
@@ -561,7 +638,7 @@ Name | Type | Description  | Required | Notes
 
 ## get_v2_users_user_id
 
-> models::GetUserResponse get_v2_users_user_id(user_id)
+> models::GetUserResponse get_v2_users_user_id(user_id, identity_provider_id)
 
 
 Get user details.
@@ -572,6 +649,7 @@ Get user details.
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **user_id** | **String** |  | [required] |
+**identity_provider_id** | Option<**String**> |  |  |
 
 ### Return type
 
@@ -866,7 +944,7 @@ Name | Type | Description  | Required | Notes
 > Vec<models::CompletionStreamResponse> post_v2_commands_completions(completion_stream_request, limit, stream_idle_timeout_ms)
 
 
-Query completions list (blocking call)
+Query completions list (blocking call) Notice: This endpoint should be used for small results set. When number of results exceeded node configuration limit (`http-list-max-elements-limit`) there will be an error (`413 Content Too Large`) returned. Increasing this limit may lead to performance issues and high memory consumption. Consider using websockets (asyncapi) for better efficiency with larger results.
 
 ### Parameters
 
@@ -988,7 +1066,7 @@ Name | Type | Description  | Required | Notes
 > models::JsSubmitAndWaitForTransactionTreeResponse post_v2_commands_submit_and_wait_for_transaction_tree(js_commands)
 
 
-Submit a batch of commands and wait for the transaction trees response
+Submit a batch of commands and wait for the transaction trees response. Provided for backwards compatibility, it will be removed in the Canton version 3.5.0, use submit-and-wait-for-transaction instead.
 
 ### Parameters
 
@@ -1009,6 +1087,99 @@ Name | Type | Description  | Required | Notes
 
 - **Content-Type**: application/json
 - **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## post_v2_contracts_contract_by_id
+
+> models::GetContractResponse post_v2_contracts_contract_by_id(get_contract_request)
+
+
+Looking up contract data by contract ID. This endpoint is experimental / alpha, therefore no backwards compatibility is guaranteed. This endpoint must not be used to look up contracts which entered the participant via party replication or repair service. 
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**get_contract_request** | [**GetContractRequest**](GetContractRequest.md) |  | [required] |
+
+### Return type
+
+[**models::GetContractResponse**](GetContractResponse.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## post_v2_dars
+
+> serde_json::Value post_v2_dars(body, vet_all_packages, synchronizer_id)
+
+
+Upload a DAR to the participant node
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**body** | **std::path::PathBuf** |  | [required] |
+**vet_all_packages** | Option<**bool**> |  |  |
+**synchronizer_id** | Option<**String**> |  |  |
+
+### Return type
+
+[**serde_json::Value**](serde_json::Value.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/octet-stream
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## post_v2_dars_validate
+
+> post_v2_dars_validate(body, synchronizer_id)
+
+
+Validates a DAR for upgrade-compatibility against the current vetting state on the target synchronizer
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**body** | **std::path::PathBuf** |  | [required] |
+**synchronizer_id** | Option<**String**> |  |  |
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/octet-stream
+- **Accept**: text/plain, application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1103,6 +1274,96 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## post_v2_interactive_submission_executeandwait
+
+> models::ExecuteSubmissionAndWaitResponse post_v2_interactive_submission_executeandwait(js_execute_submission_and_wait_request)
+
+
+Execute a signed transaction and wait for its completion
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**js_execute_submission_and_wait_request** | [**JsExecuteSubmissionAndWaitRequest**](JsExecuteSubmissionAndWaitRequest.md) |  | [required] |
+
+### Return type
+
+[**models::ExecuteSubmissionAndWaitResponse**](ExecuteSubmissionAndWaitResponse.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## post_v2_interactive_submission_executeandwaitfortransaction
+
+> models::JsExecuteSubmissionAndWaitForTransactionResponse post_v2_interactive_submission_executeandwaitfortransaction(js_execute_submission_and_wait_for_transaction_request)
+
+
+Execute a signed transaction and wait for the transaction response
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**js_execute_submission_and_wait_for_transaction_request** | [**JsExecuteSubmissionAndWaitForTransactionRequest**](JsExecuteSubmissionAndWaitForTransactionRequest.md) |  | [required] |
+
+### Return type
+
+[**models::JsExecuteSubmissionAndWaitForTransactionResponse**](JsExecuteSubmissionAndWaitForTransactionResponse.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## post_v2_interactive_submission_preferred_packages
+
+> models::GetPreferredPackagesResponse post_v2_interactive_submission_preferred_packages(get_preferred_packages_request)
+
+
+Get the version of preferred packages for constructing a command submission
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**get_preferred_packages_request** | [**GetPreferredPackagesRequest**](GetPreferredPackagesRequest.md) |  | [required] |
+
+### Return type
+
+[**models::GetPreferredPackagesResponse**](GetPreferredPackagesResponse.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## post_v2_interactive_submission_prepare
 
 > models::JsPrepareSubmissionResponse post_v2_interactive_submission_prepare(js_prepare_submission_request)
@@ -1133,12 +1394,100 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## post_v2_package_vetting
+
+> models::UpdateVettedPackagesResponse post_v2_package_vetting(update_vetted_packages_request)
+
+
+Update the vetted packages of this participant This endpoint (POST /package-vetting) is deprecated and will be removed in a future release. Please use POST /package-vetting/update instead.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**update_vetted_packages_request** | [**UpdateVettedPackagesRequest**](UpdateVettedPackagesRequest.md) |  | [required] |
+
+### Return type
+
+[**models::UpdateVettedPackagesResponse**](UpdateVettedPackagesResponse.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## post_v2_package_vetting_list
+
+> models::ListVettedPackagesResponse post_v2_package_vetting_list(list_vetted_packages_request)
+
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**list_vetted_packages_request** | [**ListVettedPackagesRequest**](ListVettedPackagesRequest.md) |  | [required] |
+
+### Return type
+
+[**models::ListVettedPackagesResponse**](ListVettedPackagesResponse.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## post_v2_package_vetting_update
+
+> models::UpdateVettedPackagesResponse post_v2_package_vetting_update(update_vetted_packages_request)
+
+
+Update vetted packages
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**update_vetted_packages_request** | [**UpdateVettedPackagesRequest**](UpdateVettedPackagesRequest.md) |  | [required] |
+
+### Return type
+
+[**models::UpdateVettedPackagesResponse**](UpdateVettedPackagesResponse.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## post_v2_packages
 
-> serde_json::Value post_v2_packages(body)
+> serde_json::Value post_v2_packages(body, vet_all_packages, synchronizer_id)
 
 
-Upload a DAR to the participant node
+Upload a DAR to the participant node. Behaves the same as /dars. This endpoint will be deprecated and removed in a future release.
 
 ### Parameters
 
@@ -1146,6 +1495,8 @@ Upload a DAR to the participant node
 Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **body** | **std::path::PathBuf** |  | [required] |
+**vet_all_packages** | Option<**bool**> |  |  |
+**synchronizer_id** | Option<**String**> |  |  |
 
 ### Return type
 
@@ -1193,12 +1544,72 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## post_v2_parties_external_allocate
+
+> models::AllocateExternalPartyResponse post_v2_parties_external_allocate(allocate_external_party_request)
+
+
+Allocate a new external party
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**allocate_external_party_request** | [**AllocateExternalPartyRequest**](AllocateExternalPartyRequest.md) |  | [required] |
+
+### Return type
+
+[**models::AllocateExternalPartyResponse**](AllocateExternalPartyResponse.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## post_v2_parties_external_generate_topology
+
+> models::GenerateExternalPartyTopologyResponse post_v2_parties_external_generate_topology(generate_external_party_topology_request)
+
+
+Generate a topology for an external party
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**generate_external_party_topology_request** | [**GenerateExternalPartyTopologyRequest**](GenerateExternalPartyTopologyRequest.md) |  | [required] |
+
+### Return type
+
+[**models::GenerateExternalPartyTopologyResponse**](GenerateExternalPartyTopologyResponse.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## post_v2_state_active_contracts
 
 > Vec<models::JsGetActiveContractsResponse> post_v2_state_active_contracts(get_active_contracts_request, limit, stream_idle_timeout_ms)
 
 
-Query active contracts list (blocking call)
+Query active contracts list (blocking call). Querying active contracts is an expensive operation and if possible should not be repeated often. Consider querying active contracts initially (for a given offset) and then repeatedly call one of `/v2/updates/...`endpoints  to get subsequent modifications. You can also use websockets to get updates with better performance.  Notice: This endpoint should be used for small results set. When number of results exceeded node configuration limit (`http-list-max-elements-limit`) there will be an error (`413 Content Too Large`) returned. Increasing this limit may lead to performance issues and high memory consumption. Consider using websockets (asyncapi) for better efficiency with larger results.
 
 ### Parameters
 
@@ -1225,12 +1636,44 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## post_v2_updates
+
+> Vec<models::JsGetUpdatesResponse> post_v2_updates(get_updates_request, limit, stream_idle_timeout_ms)
+
+
+Query updates list (blocking call) Notice: This endpoint should be used for small results set. When number of results exceeded node configuration limit (`http-list-max-elements-limit`) there will be an error (`413 Content Too Large`) returned. Increasing this limit may lead to performance issues and high memory consumption. Consider using websockets (asyncapi) for better efficiency with larger results.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**get_updates_request** | [**GetUpdatesRequest**](GetUpdatesRequest.md) |  | [required] |
+**limit** | Option<**i64**> | maximum number of elements to return, this param is ignored if is bigger than server setting |  |
+**stream_idle_timeout_ms** | Option<**i64**> | timeout to complete and send result if no new elements are received (for open ended streams) |  |
+
+### Return type
+
+[**Vec<models::JsGetUpdatesResponse>**](JsGetUpdatesResponse.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## post_v2_updates_flats
 
 > Vec<models::JsGetUpdatesResponse> post_v2_updates_flats(get_updates_request, limit, stream_idle_timeout_ms)
 
 
-Query flat transactions update list (blocking call)
+Query flat transactions update list (blocking call). Provided for backwards compatibility, it will be removed in the Canton version 3.5.0, use v2/updates instead. Notice: This endpoint should be used for small results set. When number of results exceeded node configuration limit (`http-list-max-elements-limit`) there will be an error (`413 Content Too Large`) returned. Increasing this limit may lead to performance issues and high memory consumption. Consider using websockets (asyncapi) for better efficiency with larger results.
 
 ### Parameters
 
@@ -1262,7 +1705,7 @@ Name | Type | Description  | Required | Notes
 > models::JsGetTransactionResponse post_v2_updates_transaction_by_id(get_transaction_by_id_request)
 
 
-Get transaction by id
+Get transaction by id. Provided for backwards compatibility, it will be removed in the Canton version 3.5.0, use v2/updates/update-by-id instead.
 
 ### Parameters
 
@@ -1292,7 +1735,7 @@ Name | Type | Description  | Required | Notes
 > models::JsGetTransactionResponse post_v2_updates_transaction_by_offset(get_transaction_by_offset_request)
 
 
-Get transaction by offset
+Get transaction by offset. Provided for backwards compatibility, it will be removed in the Canton version 3.5.0, use v2/updates/update-by-offset instead.
 
 ### Parameters
 
@@ -1322,7 +1765,7 @@ Name | Type | Description  | Required | Notes
 > Vec<models::JsGetUpdateTreesResponse> post_v2_updates_trees(get_updates_request, limit, stream_idle_timeout_ms)
 
 
-Query update transactions tree list (blocking call)
+Query update transactions tree list (blocking call). Provided for backwards compatibility, it will be removed in the Canton version 3.5.0, use v2/updates instead. Notice: This endpoint should be used for small results set. When number of results exceeded node configuration limit (`http-list-max-elements-limit`) there will be an error (`413 Content Too Large`) returned. Increasing this limit may lead to performance issues and high memory consumption. Consider using websockets (asyncapi) for better efficiency with larger results.
 
 ### Parameters
 
