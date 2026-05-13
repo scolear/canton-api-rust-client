@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **command_id** | **String** | The ID of the succeeded or failed command. Must be a valid LedgerString (as described in ``value.proto``).  Required | 
 **status** | Option<[**models::JsStatus**](JsStatus.md)> |  | [optional]
-**update_id** | Option<**String**> | The update_id of the transaction or reassignment that resulted from the command with command_id.  Only set for successfully executed commands. Must be a valid LedgerString (as described in ``value.proto``). Optional | [optional]
+**update_id** | Option<**String**> | The update_id of the transaction or reassignment that resulted from the command with command_id.  Only set for successfully executed commands. Must be a valid LedgerString (as described in ``value.proto``).  Optional | [optional]
 **user_id** | **String** | The user-id that was used for the submission, as described in ``commands.proto``. Must be a valid UserIdString (as described in ``value.proto``).  Required | 
 **act_as** | **Vec<String>** | The set of parties on whose behalf the commands were executed. Contains the ``act_as`` parties from ``commands.proto`` filtered to the requesting parties in CompletionStreamRequest. The order of the parties need not be the same as in the submission. Each element must be a valid PartyIdString (as described in ``value.proto``).  Required: must be non-empty | 
 **submission_id** | Option<**String**> | The submission ID this completion refers to, as described in ``commands.proto``. Must be a valid LedgerString (as described in ``value.proto``).  Optional | [optional]

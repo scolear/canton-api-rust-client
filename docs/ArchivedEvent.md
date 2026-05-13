@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **offset** | **i64** | The offset of origin. Offsets are managed by the participant nodes. Transactions can thus NOT be assumed to have the same offsets on different participant nodes. It is a valid absolute offset (positive integer)  Required | 
 **node_id** | **i32** | The position of this event in the originating transaction or reassignment. Node IDs are not necessarily equal across participants, as these may see different projections/parts of transactions. Must be valid node ID (non-negative integer)  Required | 
-**contract_id** | **String** | The ID of the archived contract. Must be a valid LedgerString (as described in ``value.proto``). Required | 
+**contract_id** | **String** | The ID of the archived contract. Must be a valid LedgerString (as described in ``value.proto``).  Required | 
 **template_id** | **String** | Identifies the template that defines the choice that archived the contract. This template's package-id may differ from the target contract's package-id if the target contract has been upgraded or downgraded.  The identifier uses the package-id reference format.  Required | 
 **witness_parties** | **Vec<String>** | The parties that are notified of this event. For an ``ArchivedEvent``, these are the intersection of the stakeholders of the contract in question and the parties specified in the ``TransactionFilter``. The stakeholders are the union of the signatories and the observers of the contract. Each one of its elements must be a valid PartyIdString (as described in ``value.proto``).  Required: must be non-empty | 
 **package_name** | **String** | The package name of the contract.  Required | 

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **contract_id** | **String** | The ID of the created contract. Must be a valid LedgerString (as described in ``value.proto``).  Required | 
 **template_id** | **String** | The template of the created contract. The identifier uses the package-id reference format.  Required | 
 **contract_key** | Option<**serde_json::Value**> | The key of the created contract. This will be set if and only if ``template_id`` defines a contract key.  Optional | [optional]
+**contract_key_hash** | Option<**String**> | The hash of contract_key. This will be set if and only if ``template_id`` defines a contract key.  Optional: can be empty | [optional]
 **create_argument** | Option<**serde_json::Value**> | The arguments that have been used to create the contract.  Required | 
 **created_event_blob** | Option<**String**> | Opaque representation of contract create event payload intended for forwarding to an API server as a contract disclosed as part of a command submission.  Optional: can be empty | [optional]
 **interface_views** | Option<[**Vec<models::JsInterfaceView>**](JsInterfaceView.md)> | Interface views specified in the transaction filter. Includes an ``InterfaceView`` for each interface for which there is a ``InterfaceFilter`` with  - its party in the ``witness_parties`` of this event, - and which is implemented by the template of this event, - and which has ``include_interface_view`` set.  Optional: can be empty | [optional]

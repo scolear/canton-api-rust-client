@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **is_deactivated** | Option<**bool**> | When set, then the user is denied all access to the Ledger API. Otherwise, the user has access to the Ledger API as per the user's rights. Modifiable  Optional | [optional]
 **metadata** | Option<[**models::ObjectMeta**](ObjectMeta.md)> |  | [optional]
 **identity_provider_id** | Option<**String**> | The ID of the identity provider configured by ``Identity Provider Config`` If not set, assume the user is managed by the default identity provider.  Optional | [optional]
+**primary_party_authentication** | Option<**bool**> | If set to true, the user may authenticate against the Ledger API by signing a Party JWT using the primary party's signing key. Modifiable  Optional | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
