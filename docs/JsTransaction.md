@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **trace_context** | Option<[**models::TraceContext**](TraceContext.md)> |  | [optional]
 **record_time** | **String** | The time at which the transaction was recorded. The record time refers to the synchronizer which synchronized the transaction.  Required | 
 **external_transaction_hash** | Option<**String**> | For transaction externally signed, contains the external transaction hash signed by the external party. Can be used to correlate an external submission with a committed transaction.  Optional: can be empty | [optional]
-**paid_traffic_cost** | Option<**i64**> | The traffic cost that this participant node paid for the confirmation request for this transaction.  Not set for transactions that were - initiated by another participant - initiated offline via the repair service - processed before the participant started serving traffic cost on the Ledger API - returned as part of a query filtering for a non submitting party  Optional: can be empty | [optional]
+**paid_traffic_cost** | Option<**i64**> | The traffic cost that this participant node paid for the confirmation request for this transaction.  Not set for transactions that were - initiated by another participant - initiated offline via the repair service - processed before the participant started serving traffic cost on the Ledger API - returned as part of a query filtering for a non submitting party  Optional | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -86,6 +86,7 @@ docs/FieldMask.md
 docs/Filters.md
 docs/GenerateExternalPartyTopologyRequest.md
 docs/GenerateExternalPartyTopologyResponse.md
+docs/GetActiveContractsPageRequest.md
 docs/GetActiveContractsRequest.md
 docs/GetConnectedSynchronizersResponse.md
 docs/GetContractRequest.md
@@ -105,11 +106,11 @@ docs/GetTransactionByIdRequest.md
 docs/GetTransactionByOffsetRequest.md
 docs/GetUpdateByIdRequest.md
 docs/GetUpdateByOffsetRequest.md
+docs/GetUpdatesPageRequest.md
 docs/GetUpdatesRequest.md
 docs/GetUserResponse.md
 docs/GrantUserRightsRequest.md
 docs/GrantUserRightsResponse.md
-docs/Identifier.md
 docs/IdentifierFilter.md
 docs/IdentifierFilterOneOf.md
 docs/IdentifierFilterOneOf1.md
@@ -135,12 +136,14 @@ docs/JsExecuteSubmissionAndWaitForTransactionRequest.md
 docs/JsExecuteSubmissionAndWaitForTransactionResponse.md
 docs/JsExecuteSubmissionAndWaitRequest.md
 docs/JsExecuteSubmissionRequest.md
+docs/JsGetActiveContractsPageResponse.md
 docs/JsGetActiveContractsResponse.md
 docs/JsGetEventsByContractIdResponse.md
 docs/JsGetTransactionResponse.md
 docs/JsGetTransactionTreeResponse.md
 docs/JsGetUpdateResponse.md
 docs/JsGetUpdateTreesResponse.md
+docs/JsGetUpdatesPageResponse.md
 docs/JsGetUpdatesResponse.md
 docs/JsIncompleteAssigned.md
 docs/JsIncompleteUnassigned.md
@@ -199,6 +202,8 @@ docs/ParticipantAuthorizationAdded.md
 docs/ParticipantAuthorizationAdded1.md
 docs/ParticipantAuthorizationChanged.md
 docs/ParticipantAuthorizationChanged1.md
+docs/ParticipantAuthorizationOnboarding.md
+docs/ParticipantAuthorizationOnboarding1.md
 docs/ParticipantAuthorizationRevoked.md
 docs/ParticipantAuthorizationRevoked1.md
 docs/ParticipantAuthorizationTopologyFormat.md
@@ -240,6 +245,7 @@ docs/TopologyEventEventOneOf.md
 docs/TopologyEventEventOneOf1.md
 docs/TopologyEventEventOneOf2.md
 docs/TopologyEventEventOneOf3.md
+docs/TopologyEventEventOneOf4.md
 docs/TopologyFormat.md
 docs/TopologyStateFilter.md
 docs/TopologyTransaction.md
@@ -374,6 +380,7 @@ src/models/field_mask.rs
 src/models/filters.rs
 src/models/generate_external_party_topology_request.rs
 src/models/generate_external_party_topology_response.rs
+src/models/get_active_contracts_page_request.rs
 src/models/get_active_contracts_request.rs
 src/models/get_connected_synchronizers_response.rs
 src/models/get_contract_request.rs
@@ -393,11 +400,11 @@ src/models/get_transaction_by_id_request.rs
 src/models/get_transaction_by_offset_request.rs
 src/models/get_update_by_id_request.rs
 src/models/get_update_by_offset_request.rs
+src/models/get_updates_page_request.rs
 src/models/get_updates_request.rs
 src/models/get_user_response.rs
 src/models/grant_user_rights_request.rs
 src/models/grant_user_rights_response.rs
-src/models/identifier.rs
 src/models/identifier_filter.rs
 src/models/identifier_filter_one_of.rs
 src/models/identifier_filter_one_of_1.rs
@@ -423,12 +430,14 @@ src/models/js_execute_submission_and_wait_for_transaction_request.rs
 src/models/js_execute_submission_and_wait_for_transaction_response.rs
 src/models/js_execute_submission_and_wait_request.rs
 src/models/js_execute_submission_request.rs
+src/models/js_get_active_contracts_page_response.rs
 src/models/js_get_active_contracts_response.rs
 src/models/js_get_events_by_contract_id_response.rs
 src/models/js_get_transaction_response.rs
 src/models/js_get_transaction_tree_response.rs
 src/models/js_get_update_response.rs
 src/models/js_get_update_trees_response.rs
+src/models/js_get_updates_page_response.rs
 src/models/js_get_updates_response.rs
 src/models/js_incomplete_assigned.rs
 src/models/js_incomplete_unassigned.rs
@@ -488,6 +497,8 @@ src/models/participant_authorization_added.rs
 src/models/participant_authorization_added1.rs
 src/models/participant_authorization_changed.rs
 src/models/participant_authorization_changed1.rs
+src/models/participant_authorization_onboarding.rs
+src/models/participant_authorization_onboarding1.rs
 src/models/participant_authorization_revoked.rs
 src/models/participant_authorization_revoked1.rs
 src/models/participant_authorization_topology_format.rs
@@ -529,6 +540,7 @@ src/models/topology_event_event_one_of.rs
 src/models/topology_event_event_one_of_1.rs
 src/models/topology_event_event_one_of_2.rs
 src/models/topology_event_event_one_of_3.rs
+src/models/topology_event_event_one_of_4.rs
 src/models/topology_format.rs
 src/models/topology_state_filter.rs
 src/models/topology_transaction.rs

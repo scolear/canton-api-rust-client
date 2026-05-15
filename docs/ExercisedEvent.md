@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **offset** | **i64** | The offset of origin. Offsets are managed by the participant nodes. Transactions can thus NOT be assumed to have the same offsets on different participant nodes. It is a valid absolute offset (positive integer)  Required | 
 **node_id** | **i32** | The position of this event in the originating transaction or reassignment. Node IDs are not necessarily equal across participants, as these may see different projections/parts of transactions. Must be valid node ID (non-negative integer)  Required | 
-**contract_id** | **String** | The ID of the target contract. Must be a valid LedgerString (as described in ``value.proto``). Required | 
+**contract_id** | **String** | The ID of the target contract. Must be a valid LedgerString (as described in ``value.proto``).  Required | 
 **template_id** | **String** | Identifies the template that defines the executed choice. This template's package-id may differ from the target contract's package-id if the target contract has been upgraded or downgraded.  The identifier uses the package-id reference format.  Required | 
 **interface_id** | Option<**String**> | The interface where the choice is defined, if inherited. If defined, the identifier uses the package-id reference format.  Optional | [optional]
 **choice** | **String** | The choice that was exercised on the target contract. Must be a valid NameString (as described in ``value.proto``).  Required | 

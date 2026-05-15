@@ -2,16 +2,16 @@
 
 Rust client for the Canton JSON Ledger API, generated from the OpenAPI spec using [openapi-generator](https://openapi-generator.tech) with manual adjustments.
 
-- Canton API version: 3.4.12
-- Minimum Canton version: 3.4.12
-- Package version: 3.4.12-0.1.0
+- Canton API version: 3.6.0
+- Minimum Canton version: 3.6.0
+- Package version: 3.6.0-0.1.0
 
 ## Installation
 
 Add to your `Cargo.toml`:
 
 ```toml
-canton-api-client = "3.4.12-0.1.0"
+canton-api-client = "3.6.0-0.1.0"
 ```
 
 Or use a path dependency:
