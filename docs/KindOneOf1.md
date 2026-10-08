@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**can_execute_as** | [**models::CanExecuteAs**](CanExecuteAs.md) |  | 
+**can_act_as_any_party** | [**models::CanActAsAnyParty**](CanActAsAnyParty.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

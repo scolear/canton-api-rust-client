@@ -11,6 +11,7 @@ docs/AssignCommand.md
 docs/AssignCommand1.md
 docs/CanActAs.md
 docs/CanActAs1.md
+docs/CanActAsAnyParty.md
 docs/CanExecuteAs.md
 docs/CanExecuteAs1.md
 docs/CanExecuteAsAnyParty.md
@@ -86,8 +87,12 @@ docs/FieldMask.md
 docs/Filters.md
 docs/GenerateExternalPartyTopologyRequest.md
 docs/GenerateExternalPartyTopologyResponse.md
+docs/GetAccountResponse.md
 docs/GetActiveContractsPageRequest.md
 docs/GetActiveContractsRequest.md
+docs/GetCompletionByHashRequest.md
+docs/GetCompletionByHashResponse.md
+docs/GetCompletionsRequest.md
 docs/GetConnectedSynchronizersResponse.md
 docs/GetContractRequest.md
 docs/GetContractResponse.md
@@ -104,11 +109,13 @@ docs/GetPreferredPackagesRequest.md
 docs/GetPreferredPackagesResponse.md
 docs/GetTransactionByIdRequest.md
 docs/GetTransactionByOffsetRequest.md
+docs/GetUpdateByHashRequest.md
 docs/GetUpdateByIdRequest.md
 docs/GetUpdateByOffsetRequest.md
 docs/GetUpdatesPageRequest.md
 docs/GetUpdatesRequest.md
 docs/GetUserResponse.md
+docs/GetV2JoseJwks200Response.md
 docs/GrantUserRightsRequest.md
 docs/GrantUserRightsResponse.md
 docs/IdentifierFilter.md
@@ -172,6 +179,7 @@ docs/KindOneOf4.md
 docs/KindOneOf5.md
 docs/KindOneOf6.md
 docs/KindOneOf7.md
+docs/KindOneOf8.md
 docs/ListIdentityProviderConfigsResponse.md
 docs/ListKnownPartiesResponse.md
 docs/ListPackagesResponse.md
@@ -214,6 +222,8 @@ docs/PrefetchContractKey.md
 docs/Prior.md
 docs/PriorTopologySerial.md
 docs/ProtoAny.md
+docs/PruneEventsRequest.md
+docs/PruneEventsResponse.md
 docs/Reassignment.md
 docs/Reassignment1.md
 docs/ReassignmentCommand.md
@@ -268,6 +278,8 @@ docs/Update1.md
 docs/Update1OneOf.md
 docs/Update1OneOf1.md
 docs/Update1OneOf2.md
+docs/UpdateAccountRequest.md
+docs/UpdateAccountResponse.md
 docs/UpdateFormat.md
 docs/UpdateIdentityProviderConfigRequest.md
 docs/UpdateIdentityProviderConfigResponse.md
@@ -306,6 +318,7 @@ src/models/assign_command.rs
 src/models/assign_command1.rs
 src/models/can_act_as.rs
 src/models/can_act_as1.rs
+src/models/can_act_as_any_party.rs
 src/models/can_execute_as.rs
 src/models/can_execute_as1.rs
 src/models/can_execute_as_any_party.rs
@@ -380,8 +393,12 @@ src/models/field_mask.rs
 src/models/filters.rs
 src/models/generate_external_party_topology_request.rs
 src/models/generate_external_party_topology_response.rs
+src/models/get_account_response.rs
 src/models/get_active_contracts_page_request.rs
 src/models/get_active_contracts_request.rs
+src/models/get_completion_by_hash_request.rs
+src/models/get_completion_by_hash_response.rs
+src/models/get_completions_request.rs
 src/models/get_connected_synchronizers_response.rs
 src/models/get_contract_request.rs
 src/models/get_contract_response.rs
@@ -398,11 +415,13 @@ src/models/get_preferred_packages_request.rs
 src/models/get_preferred_packages_response.rs
 src/models/get_transaction_by_id_request.rs
 src/models/get_transaction_by_offset_request.rs
+src/models/get_update_by_hash_request.rs
 src/models/get_update_by_id_request.rs
 src/models/get_update_by_offset_request.rs
 src/models/get_updates_page_request.rs
 src/models/get_updates_request.rs
 src/models/get_user_response.rs
+src/models/get_v2_jose_jwks_200_response.rs
 src/models/grant_user_rights_request.rs
 src/models/grant_user_rights_response.rs
 src/models/identifier_filter.rs
@@ -466,6 +485,7 @@ src/models/kind_one_of_4.rs
 src/models/kind_one_of_5.rs
 src/models/kind_one_of_6.rs
 src/models/kind_one_of_7.rs
+src/models/kind_one_of_8.rs
 src/models/list_identity_provider_configs_response.rs
 src/models/list_known_parties_response.rs
 src/models/list_packages_response.rs
@@ -509,6 +529,8 @@ src/models/prefetch_contract_key.rs
 src/models/prior.rs
 src/models/prior_topology_serial.rs
 src/models/proto_any.rs
+src/models/prune_events_request.rs
+src/models/prune_events_response.rs
 src/models/reassignment.rs
 src/models/reassignment1.rs
 src/models/reassignment_command.rs
@@ -563,6 +585,8 @@ src/models/update1.rs
 src/models/update1_one_of.rs
 src/models/update1_one_of_1.rs
 src/models/update1_one_of_2.rs
+src/models/update_account_request.rs
+src/models/update_account_response.rs
 src/models/update_format.rs
 src/models/update_identity_provider_config_request.rs
 src/models/update_identity_provider_config_response.rs

@@ -1,6 +1,6 @@
 [package]
 name = "canton-api-client"
-version = "3.6.0-0.1.0"
+version = "3.6.1-0.1.0"
 authors = ["robert@dlc.link"]
 description = "Canton Ledger API rust client"
 # Override this license by providing a License Object in the OpenAPI.
