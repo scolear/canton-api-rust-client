@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**identity_provider_admin** | [**models::IdentityProviderAdmin**](IdentityProviderAdmin.md) |  | 
+**empty** | **serde_json::Value** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

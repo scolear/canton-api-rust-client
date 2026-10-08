@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **source** | **String** | The ID of the source synchronizer Must be a valid synchronizer id  Required | 
 **target** | **String** | The ID of the target synchronizer Must be a valid synchronizer id  Required | 
 **submitter** | Option<**String**> | Party on whose behalf the unassign command was executed. Empty if the unassignment happened offline via the repair service. Must be a valid PartyIdString (as described in ``value.proto``).  Optional | [optional]
-**reassignment_counter** | **i64** | Each corresponding assigned and unassigned event has the same reassignment_counter. This strictly increases with each unassign command for the same contract. Creation of the contract corresponds to reassignment_counter equals zero.  Required | 
+**reassignment_counter** | **i64** | The reassignment counter associated with this unassignment on the source synchronizer.  Reassignment counters strictly increase with each unassign command for the same contract. Creation of the contract corresponds to reassignment_counter equal to zero.  Required | 
 **assignment_exclusivity** | Option<**String**> | Assignment exclusivity Before this time (measured on the target synchronizer), only the submitter of the unassignment can initiate the assignment Defined for reassigning participants.  Optional | [optional]
 **witness_parties** | **Vec<String>** | The parties that are notified of this event.  Required: must be non-empty | 
 **package_name** | **String** | The package name of the contract.  Required | 

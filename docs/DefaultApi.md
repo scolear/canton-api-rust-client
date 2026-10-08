@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**get_v2_idps**](DefaultApi.md#get_v2_idps) | **GET** /v2/idps | 
 [**get_v2_idps_idp_id**](DefaultApi.md#get_v2_idps_idp_id) | **GET** /v2/idps/{idp_id} | 
 [**get_v2_interactive_submission_preferred_package_version**](DefaultApi.md#get_v2_interactive_submission_preferred_package_version) | **GET** /v2/interactive-submission/preferred-package-version | 
+[**get_v2_jose_jwks**](DefaultApi.md#get_v2_jose_jwks) | **GET** /v2/jose/jwks/synchronizer/{synchronizer}/party/{party} | 
 [**get_v2_package_vetting**](DefaultApi.md#get_v2_package_vetting) | **GET** /v2/package-vetting | 
 [**get_v2_packages**](DefaultApi.md#get_v2_packages) | **GET** /v2/packages | 
 [**get_v2_packages_package_id**](DefaultApi.md#get_v2_packages_package_id) | **GET** /v2/packages/{package_id} | 
@@ -23,6 +24,7 @@ Method | HTTP request | Description
 [**get_v2_state_connected_synchronizers**](DefaultApi.md#get_v2_state_connected_synchronizers) | **GET** /v2/state/connected-synchronizers | 
 [**get_v2_state_latest_pruned_offsets**](DefaultApi.md#get_v2_state_latest_pruned_offsets) | **GET** /v2/state/latest-pruned-offsets | 
 [**get_v2_state_ledger_end**](DefaultApi.md#get_v2_state_ledger_end) | **GET** /v2/state/ledger-end | 
+[**get_v2_traffic_accounts_account_id**](DefaultApi.md#get_v2_traffic_accounts_account_id) | **GET** /v2/traffic/accounts/{account_id} | 
 [**get_v2_updates_transaction_tree_by_id_update_id**](DefaultApi.md#get_v2_updates_transaction_tree_by_id_update_id) | **GET** /v2/updates/transaction-tree-by-id/{update_id} | 
 [**get_v2_updates_transaction_tree_by_offset_offset**](DefaultApi.md#get_v2_updates_transaction_tree_by_offset_offset) | **GET** /v2/updates/transaction-tree-by-offset/{offset} | 
 [**get_v2_users**](DefaultApi.md#get_v2_users) | **GET** /v2/users | 
@@ -36,6 +38,8 @@ Method | HTTP request | Description
 [**patch_v2_users_user_id_rights**](DefaultApi.md#patch_v2_users_user_id_rights) | **PATCH** /v2/users/{user_id}/rights | 
 [**post_v2_commands_async_submit**](DefaultApi.md#post_v2_commands_async_submit) | **POST** /v2/commands/async/submit | 
 [**post_v2_commands_async_submit_reassignment**](DefaultApi.md#post_v2_commands_async_submit_reassignment) | **POST** /v2/commands/async/submit-reassignment | 
+[**post_v2_commands_command_completions**](DefaultApi.md#post_v2_commands_command_completions) | **POST** /v2/commands/command-completions | 
+[**post_v2_commands_completion_by_hash**](DefaultApi.md#post_v2_commands_completion_by_hash) | **POST** /v2/commands/completion-by-hash | 
 [**post_v2_commands_completions**](DefaultApi.md#post_v2_commands_completions) | **POST** /v2/commands/completions | 
 [**post_v2_commands_submit_and_wait**](DefaultApi.md#post_v2_commands_submit_and_wait) | **POST** /v2/commands/submit-and-wait | 
 [**post_v2_commands_submit_and_wait_for_reassignment**](DefaultApi.md#post_v2_commands_submit_and_wait_for_reassignment) | **POST** /v2/commands/submit-and-wait-for-reassignment | 
@@ -59,12 +63,16 @@ Method | HTTP request | Description
 [**post_v2_parties_external_allocate**](DefaultApi.md#post_v2_parties_external_allocate) | **POST** /v2/parties/external/allocate | 
 [**post_v2_parties_external_generate_topology**](DefaultApi.md#post_v2_parties_external_generate_topology) | **POST** /v2/parties/external/generate-topology | 
 [**post_v2_state_active_contracts**](DefaultApi.md#post_v2_state_active_contracts) | **POST** /v2/state/active-contracts | 
+[**post_v2_state_active_contracts_page**](DefaultApi.md#post_v2_state_active_contracts_page) | **POST** /v2/state/active-contracts-page | 
+[**post_v2_traffic_accounts**](DefaultApi.md#post_v2_traffic_accounts) | **POST** /v2/traffic/accounts | 
+[**post_v2_traffic_events_prune**](DefaultApi.md#post_v2_traffic_events_prune) | **POST** /v2/traffic/events/prune | 
 [**post_v2_updates**](DefaultApi.md#post_v2_updates) | **POST** /v2/updates | 
 [**post_v2_updates_flats**](DefaultApi.md#post_v2_updates_flats) | **POST** /v2/updates/flats | 
 [**post_v2_updates_get_updates_page**](DefaultApi.md#post_v2_updates_get_updates_page) | **POST** /v2/updates/get-updates-page | 
 [**post_v2_updates_transaction_by_id**](DefaultApi.md#post_v2_updates_transaction_by_id) | **POST** /v2/updates/transaction-by-id | 
 [**post_v2_updates_transaction_by_offset**](DefaultApi.md#post_v2_updates_transaction_by_offset) | **POST** /v2/updates/transaction-by-offset | 
 [**post_v2_updates_trees**](DefaultApi.md#post_v2_updates_trees) | **POST** /v2/updates/trees | 
+[**post_v2_updates_update_by_hash**](DefaultApi.md#post_v2_updates_update_by_hash) | **POST** /v2/updates/update-by-hash | 
 [**post_v2_updates_update_by_id**](DefaultApi.md#post_v2_updates_update_by_id) | **POST** /v2/updates/update-by-id | 
 [**post_v2_updates_update_by_offset**](DefaultApi.md#post_v2_updates_update_by_offset) | **POST** /v2/updates/update-by-offset | 
 [**post_v2_users**](DefaultApi.md#post_v2_users) | **POST** /v2/users | 
@@ -278,7 +286,7 @@ Name | Type | Description  | Required | Notes
 > models::GetPreferredPackageVersionResponse get_v2_interactive_submission_preferred_package_version(package_name, parties, vetting_valid_at, synchronizer_id)
 
 
-A preferred package is the highest-versioned package for a provided package-name that is vetted by all the participants hosting the provided parties.  Ledger API clients should use this endpoint for constructing command submissions that are compatible with the provided preferred package, by making informed decisions on: - which are the compatible packages that can be used to create contracts - which contract or exercise choice argument version can be used in the command - which choices can be executed on a template or interface of a contract  Can be accessed by any Ledger API client with a valid token when Ledger API authorization is enabled.  Provided for backwards compatibility, it will be removed in the Canton version 3.4.0
+Get the preferred package version for constructing a command submission.  A preferred package is the highest-versioned package for a provided package-name that is vetted by all the participants hosting the provided parties.  Ledger API clients should use this endpoint for constructing command submissions that are compatible with the provided preferred package, by making informed decisions on: - which are the compatible packages that can be used to create contracts - which contract or exercise choice argument version can be used in the command - which choices can be executed on a template or interface of a contract  Can be accessed by any Ledger API client with a valid token when Ledger API authorization is enabled.  Deprecated since Canton 3.4: disabled by default since Canton 3.6 (re-enable temporarily with `canton.participants.<participant>.features.deprecated.enable-deprecated-endpoints-34 = true`) and will be removed in Canton 3.7. Use POST /v2/interactive-submission/preferred-packages instead.
 
 ### Parameters
 
@@ -306,12 +314,43 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## get_v2_jose_jwks
+
+> models::GetV2JoseJwks200Response get_v2_jose_jwks(synchronizer, party)
+
+
+Retrieve public keys as JWKS for a specific party and synchronizer. This endpoint is experimental / alpha, therefore no backwards compatibility is guaranteed.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**synchronizer** | **String** | synchronizer from which to read the public keys | [required] |
+**party** | **String** | party for which to retrieve the public keys | [required] |
+
+### Return type
+
+[**models::GetV2JoseJwks200Response**](getV2JoseJwks_200_response.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## get_v2_package_vetting
 
 > models::ListVettedPackagesResponse get_v2_package_vetting(list_vetted_packages_request)
 
 
-Lists which participant node vetted what packages on which synchronizer. This endpoint (GET /package-vetting) is deprecated and will be removed in a future release. Please use POST /package-vetting/list instead.
+Lists which participant node vetted what packages on which synchronizer.  Deprecated since Canton 3.5: disabled by default since Canton 3.6 (re-enable temporarily with `canton.participants.<participant>.features.deprecated.enable-deprecated-endpoints-35 = true`) and will be removed in Canton 3.7. Use POST /v2/package-vetting/list instead.
 
 ### Parameters
 
@@ -520,7 +559,7 @@ Name | Type | Description  | Required | Notes
 > models::JsGetActiveContractsPageResponse get_v2_state_active_contracts_page(get_active_contracts_page_request)
 
 
-Returns a page of the snapshot of the active contracts and incomplete (un)assignments at a ledger offset. Once all pages are fetched by repeated calls to ``GetActiveContractsPage``, the client SHOULD begin retrieving updates from the update service, starting at the ``GetActiveContractsPageResponse``.``active_at_offset`` specified in this request. Clients SHOULD NOT assume that the set of active contracts they receive reflects the state at the ledger end.
+Returns a page of the snapshot of the active contracts and incomplete (un)assignments at a ledger offset. Once all pages are fetched by repeated calls to ``GetActiveContractsPage``, the client SHOULD begin retrieving updates from the update service, starting at the ``GetActiveContractsPageResponse``.``active_at_offset`` specified in this request. Clients SHOULD NOT assume that the set of active contracts they receive reflects the state at the ledger end.  Deprecated since Canton 3.5: disabled by default since Canton 3.6 (re-enable temporarily with `canton.participants.<participant>.features.deprecated.enable-deprecated-endpoints-35 = true`) and will be removed in Canton 3.7. Use POST /v2/state/active-contracts-page instead.
 
 ### Parameters
 
@@ -606,18 +645,51 @@ This endpoint does not need any parameter.
 
 ## get_v2_state_ledger_end
 
-> models::GetLedgerEndResponse get_v2_state_ledger_end()
+> models::GetLedgerEndResponse get_v2_state_ledger_end(synchronizer_id)
 
 
 Get the current ledger end. Subscriptions started with the returned offset will serve events after this RPC was called.
 
 ### Parameters
 
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**synchronizer_id** | Option<[**Vec<String>**](String.md)> |  |  |
 
 ### Return type
 
 [**models::GetLedgerEndResponse**](GetLedgerEndResponse.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## get_v2_traffic_accounts_account_id
+
+> models::GetAccountResponse get_v2_traffic_accounts_account_id(account_id)
+
+
+Get account state for a given account ID. Permissioned only to users having ActAs or ExecuteAs rights for the party ID associated with the account ID.  NOTE: This endpoint is exposed only when traffic enforcement feature is enabled (canton.participants.participant1.traffic-enforcement.enabled = true)
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**account_id** | **String** |  | [required] |
+
+### Return type
+
+[**models::GetAccountResponse**](GetAccountResponse.md)
 
 ### Authorization
 
@@ -636,7 +708,7 @@ This endpoint does not need any parameter.
 > models::JsGetTransactionTreeResponse get_v2_updates_transaction_tree_by_id_update_id(update_id, parties)
 
 
-Get transaction tree by id. Provided for backwards compatibility, it will be removed in the Canton version 3.5.0, use v2/updates/update-by-id instead.
+Get transaction tree by id.  Deprecated since Canton 3.4: disabled by default since Canton 3.6 (re-enable temporarily with `canton.participants.<participant>.features.deprecated.enable-deprecated-endpoints-34 = true`) and will be removed in Canton 3.7. Use POST /v2/updates/update-by-id instead.
 
 ### Parameters
 
@@ -667,7 +739,7 @@ Name | Type | Description  | Required | Notes
 > models::JsGetTransactionTreeResponse get_v2_updates_transaction_tree_by_offset_offset(offset, parties)
 
 
-Get transaction tree by offset. Provided for backwards compatibility, it will be removed in the Canton version 3.5.0, use v2/updates/update-by-offset instead.
+Get transaction tree by offset.  Deprecated since Canton 3.4: disabled by default since Canton 3.6 (re-enable temporarily with `canton.participants.<participant>.features.deprecated.enable-deprecated-endpoints-34 = true`) and will be removed in Canton 3.7. Use POST /v2/updates/update-by-offset instead.
 
 ### Parameters
 
@@ -1027,12 +1099,74 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## post_v2_commands_command_completions
+
+> Vec<models::CompletionStreamResponse> post_v2_commands_command_completions(get_completions_request, limit, stream_idle_timeout_ms)
+
+
+Query completions list (blocking call)  Subscribe to command completion events. This streaming endpoint provides more flexibility in filtering than the predecessor ``CompletionStream``. Notice: This endpoint should be used for small results set. When number of results exceeded node configuration limit (`http-list-max-elements-limit`) there will be an error (`413 Content Too Large`) returned. Increasing this limit may lead to performance issues and high memory consumption. Consider using websockets (asyncapi) for better efficiency with larger results.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**get_completions_request** | [**GetCompletionsRequest**](GetCompletionsRequest.md) |  | [required] |
+**limit** | Option<**i64**> | maximum number of elements to return, this param is ignored if is bigger than server setting |  |
+**stream_idle_timeout_ms** | Option<**i64**> | timeout to complete and send result if no new elements are received (for open ended streams) |  |
+
+### Return type
+
+[**Vec<models::CompletionStreamResponse>**](CompletionStreamResponse.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## post_v2_commands_completion_by_hash
+
+> models::GetCompletionByHashResponse post_v2_commands_completion_by_hash(get_completion_by_hash_request)
+
+
+Look up a completion by its transaction hash. This is only available for completions received after upgrading to Canton version 3.5. A COMPLETION_NOT_FOUND error will be raised if either of the following is true:  - there is no completion with this transaction hash, - the completion is not visible to the user, - the completion was populated before upgrading to Canton version 3.5, - respective completions are all pruned.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**get_completion_by_hash_request** | [**GetCompletionByHashRequest**](GetCompletionByHashRequest.md) |  | [required] |
+
+### Return type
+
+[**models::GetCompletionByHashResponse**](GetCompletionByHashResponse.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## post_v2_commands_completions
 
 > Vec<models::CompletionStreamResponse> post_v2_commands_completions(completion_stream_request, limit, stream_idle_timeout_ms)
 
 
-Query completions list (blocking call)  Subscribe to command completion events. Notice: This endpoint should be used for small results set. When number of results exceeded node configuration limit (`http-list-max-elements-limit`) there will be an error (`413 Content Too Large`) returned. Increasing this limit may lead to performance issues and high memory consumption. Consider using websockets (asyncapi) for better efficiency with larger results.
+Query completions list (blocking call)  Deprecated: please use ``GetCompletions`` instead. Subscribe to command completion events. Notice: This endpoint should be used for small results set. When number of results exceeded node configuration limit (`http-list-max-elements-limit`) there will be an error (`413 Content Too Large`) returned. Increasing this limit may lead to performance issues and high memory consumption. Consider using websockets (asyncapi) for better efficiency with larger results.
 
 ### Parameters
 
@@ -1154,7 +1288,7 @@ Name | Type | Description  | Required | Notes
 > models::JsSubmitAndWaitForTransactionTreeResponse post_v2_commands_submit_and_wait_for_transaction_tree(js_commands)
 
 
-Submit a batch of commands and wait for the transaction trees response. Provided for backwards compatibility, it will be removed in the Canton version 3.5.0, use submit-and-wait-for-transaction instead.
+Submit a batch of commands and wait for the transaction trees response.  Deprecated since Canton 3.4: disabled by default since Canton 3.6 (re-enable temporarily with `canton.participants.<participant>.features.deprecated.enable-deprecated-endpoints-34 = true`) and will be removed in Canton 3.7. Use POST /v2/commands/submit-and-wait-for-transaction instead.
 
 ### Parameters
 
@@ -1337,7 +1471,7 @@ Name | Type | Description  | Required | Notes
 > serde_json::Value post_v2_interactive_submission_execute(js_execute_submission_request)
 
 
-Execute a prepared submission _asynchronously_ on the ledger. Requires a signature of the transaction from the submitting external party.
+Execute a prepared submission _asynchronously_ on the ledger. Requires `actAs` or `executeAs` scope for the submitting party when LAPI User authorization is enabled Requires a signature of the transaction from the submitting external party.
 
 ### Parameters
 
@@ -1367,7 +1501,7 @@ Name | Type | Description  | Required | Notes
 > models::ExecuteSubmissionAndWaitResponse post_v2_interactive_submission_executeandwait(js_execute_submission_and_wait_request)
 
 
-Similar to ExecuteSubmission but _synchronously_ wait for the completion of the transaction IMPORTANT: Relying on the response from this endpoint requires trusting the Participant Node to be honest. A malicious node could make a successfully committed request appeared failed and vice versa
+Similar to ExecuteSubmission but _synchronously_ wait for the completion of the transaction
 
 ### Parameters
 
@@ -1397,7 +1531,7 @@ Name | Type | Description  | Required | Notes
 > models::JsExecuteSubmissionAndWaitForTransactionResponse post_v2_interactive_submission_executeandwaitfortransaction(js_execute_submission_and_wait_for_transaction_request)
 
 
-Similar to ExecuteSubmissionAndWait but additionally returns the transaction IMPORTANT: Relying on the response from this endpoint requires trusting the Participant Node to be honest. A malicious node could make a successfully committed request appear as failed and vice versa
+Similar to ExecuteSubmissionAndWait but additionally returns the transaction
 
 ### Parameters
 
@@ -1427,7 +1561,7 @@ Name | Type | Description  | Required | Notes
 > models::GetPreferredPackagesResponse post_v2_interactive_submission_preferred_packages(get_preferred_packages_request)
 
 
-Compute the preferred packages for the vetting requirements in the request. A preferred package is the highest-versioned package for a provided package-name that is vetted by all the participants hosting the provided parties.  Ledger API clients should use this endpoint for constructing command submissions that are compatible with the provided preferred packages, by making informed decisions on: - which are the compatible packages that can be used to create contracts - which contract or exercise choice argument version can be used in the command - which choices can be executed on a template or interface of a contract  If the package preferences could not be computed due to no selection satisfying the requirements, a `FAILED_PRECONDITION` error will be returned.  Can be accessed by any Ledger API client with a valid token when Ledger API authorization is enabled.  Experimental API: this endpoint is not guaranteed to provide backwards compatibility in future releases
+Compute the preferred packages for the vetting requirements in the request. A preferred package is the highest-versioned package for a provided package-name that is vetted by all the participants hosting the provided parties.  Ledger API clients should use this endpoint for constructing command submissions that are compatible with the provided preferred packages, by making informed decisions on: - which are the compatible packages that can be used to create contracts - which contract or exercise choice argument version can be used in the command - which choices can be executed on a template or interface of a contract  If the package preferences could not be computed due to no selection satisfying the requirements, a `FAILED_PRECONDITION` error will be returned.  Can be accessed by any Ledger API client with a valid token when Ledger API authorization is enabled.
 
 ### Parameters
 
@@ -1487,7 +1621,7 @@ Name | Type | Description  | Required | Notes
 > models::UpdateVettedPackagesResponse post_v2_package_vetting(update_vetted_packages_request)
 
 
-Update the vetted packages of this participant This endpoint (POST /package-vetting) is deprecated and will be removed in a future release. Please use POST /package-vetting/update instead.
+Update the vetted packages of this participant.  Deprecated since Canton 3.5: disabled by default since Canton 3.6 (re-enable temporarily with `canton.participants.<participant>.features.deprecated.enable-deprecated-endpoints-35 = true`) and will be removed in Canton 3.7. Use POST /v2/package-vetting/update instead.
 
 ### Parameters
 
@@ -1726,6 +1860,96 @@ Name | Type | Description  | Required | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 
+## post_v2_state_active_contracts_page
+
+> models::JsGetActiveContractsPageResponse post_v2_state_active_contracts_page(get_active_contracts_page_request)
+
+
+Returns a page of the snapshot of the active contracts and incomplete (un)assignments at a ledger offset. Once all pages are fetched by repeated calls to ``GetActiveContractsPage``, the client SHOULD begin retrieving updates from the update service, starting at the ``GetActiveContractsPageResponse``.``active_at_offset`` specified in this request. Clients SHOULD NOT assume that the set of active contracts they receive reflects the state at the ledger end.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**get_active_contracts_page_request** | [**GetActiveContractsPageRequest**](GetActiveContractsPageRequest.md) |  | [required] |
+
+### Return type
+
+[**models::JsGetActiveContractsPageResponse**](JsGetActiveContractsPageResponse.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## post_v2_traffic_accounts
+
+> models::UpdateAccountResponse post_v2_traffic_accounts(update_account_request)
+
+
+Update account state for a given account ID. Permissioned only to Ledger API admin users.  NOTE: This endpoint is exposed only when traffic enforcement feature is enabled (canton.participants.participant1.traffic-enforcement.enabled = true)
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**update_account_request** | [**UpdateAccountRequest**](UpdateAccountRequest.md) |  | [required] |
+
+### Return type
+
+[**models::UpdateAccountResponse**](UpdateAccountResponse.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## post_v2_traffic_events_prune
+
+> models::PruneEventsResponse post_v2_traffic_events_prune(prune_events_request)
+
+
+Prune events from the event log that are older than a given timestamp. Permissioned only to Ledger API admin users. WARNING: Affects de-duplication. If an event is pruned, de-duplication UpdateAccount requests on it will NOT be possible.  NOTE: This endpoint is exposed only when traffic enforcement feature is enabled (canton.participants.participant1.traffic-enforcement.enabled = true)
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**prune_events_request** | [**PruneEventsRequest**](PruneEventsRequest.md) |  | [required] |
+
+### Return type
+
+[**models::PruneEventsResponse**](PruneEventsResponse.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
 ## post_v2_updates
 
 > Vec<models::JsGetUpdatesResponse> post_v2_updates(get_updates_request, limit, stream_idle_timeout_ms)
@@ -1763,7 +1987,7 @@ Name | Type | Description  | Required | Notes
 > Vec<models::JsGetUpdatesResponse> post_v2_updates_flats(get_updates_request, limit, stream_idle_timeout_ms)
 
 
-Query flat transactions update list (blocking call). Provided for backwards compatibility, it will be removed in the Canton version 3.5.0, use v2/updates instead. Notice: This endpoint should be used for small results set. When number of results exceeded node configuration limit (`http-list-max-elements-limit`) there will be an error (`413 Content Too Large`) returned. Increasing this limit may lead to performance issues and high memory consumption. Consider using websockets (asyncapi) for better efficiency with larger results.
+Query flat transactions update list (blocking call). Notice: This endpoint should be used for small results set. When number of results exceeded node configuration limit (`http-list-max-elements-limit`) there will be an error (`413 Content Too Large`) returned. Increasing this limit may lead to performance issues and high memory consumption. Consider using websockets (asyncapi) for better efficiency with larger results.  Deprecated since Canton 3.4: disabled by default since Canton 3.6 (re-enable temporarily with `canton.participants.<participant>.features.deprecated.enable-deprecated-endpoints-34 = true`) and will be removed in Canton 3.7. Use POST /v2/updates instead.
 
 ### Parameters
 
@@ -1825,7 +2049,7 @@ Name | Type | Description  | Required | Notes
 > models::JsGetTransactionResponse post_v2_updates_transaction_by_id(get_transaction_by_id_request)
 
 
-Get transaction by id. Provided for backwards compatibility, it will be removed in the Canton version 3.5.0, use v2/updates/update-by-id instead.
+Get transaction by id.  Deprecated since Canton 3.4: disabled by default since Canton 3.6 (re-enable temporarily with `canton.participants.<participant>.features.deprecated.enable-deprecated-endpoints-34 = true`) and will be removed in Canton 3.7. Use POST /v2/updates/update-by-id instead.
 
 ### Parameters
 
@@ -1855,7 +2079,7 @@ Name | Type | Description  | Required | Notes
 > models::JsGetTransactionResponse post_v2_updates_transaction_by_offset(get_transaction_by_offset_request)
 
 
-Get transaction by offset. Provided for backwards compatibility, it will be removed in the Canton version 3.5.0, use v2/updates/update-by-offset instead.
+Get transaction by offset.  Deprecated since Canton 3.4: disabled by default since Canton 3.6 (re-enable temporarily with `canton.participants.<participant>.features.deprecated.enable-deprecated-endpoints-34 = true`) and will be removed in Canton 3.7. Use POST /v2/updates/update-by-offset instead.
 
 ### Parameters
 
@@ -1885,7 +2109,7 @@ Name | Type | Description  | Required | Notes
 > Vec<models::JsGetUpdateTreesResponse> post_v2_updates_trees(get_updates_request, limit, stream_idle_timeout_ms)
 
 
-Query update transactions tree list (blocking call). Provided for backwards compatibility, it will be removed in the Canton version 3.5.0, use v2/updates instead. Notice: This endpoint should be used for small results set. When number of results exceeded node configuration limit (`http-list-max-elements-limit`) there will be an error (`413 Content Too Large`) returned. Increasing this limit may lead to performance issues and high memory consumption. Consider using websockets (asyncapi) for better efficiency with larger results.
+Query update transactions tree list (blocking call).  Deprecated since Canton 3.4: disabled by default since Canton 3.6 (re-enable temporarily with `canton.participants.<participant>.features.deprecated.enable-deprecated-endpoints-34 = true`) and will be removed in Canton 3.7. Use POST /v2/updates instead. Notice: This endpoint should be used for small results set. When number of results exceeded node configuration limit (`http-list-max-elements-limit`) there will be an error (`413 Content Too Large`) returned. Increasing this limit may lead to performance issues and high memory consumption. Consider using websockets (asyncapi) for better efficiency with larger results.
 
 ### Parameters
 
@@ -1899,6 +2123,36 @@ Name | Type | Description  | Required | Notes
 ### Return type
 
 [**Vec<models::JsGetUpdateTreesResponse>**](JsGetUpdateTreesResponse.md)
+
+### Authorization
+
+[httpAuth](../README.md#httpAuth), [apiKeyAuth](../README.md#apiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+
+## post_v2_updates_update_by_hash
+
+> models::JsGetUpdateResponse post_v2_updates_update_by_hash(get_update_by_hash_request)
+
+
+Look up an update by its transaction hash. This is only available for updates received after upgrading to Canton version 3.6. If there is no update with this transaction hash, or all the events are filtered, or the update was populated before upgrading to Canton version 3.6, an UPDATE_NOT_FOUND error will be raised.
+
+### Parameters
+
+
+Name | Type | Description  | Required | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+**get_update_by_hash_request** | [**GetUpdateByHashRequest**](GetUpdateByHashRequest.md) |  | [required] |
+
+### Return type
+
+[**models::JsGetUpdateResponse**](JsGetUpdateResponse.md)
 
 ### Authorization
 
