@@ -295,7 +295,7 @@ Name | Type | Description  | Required | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 **package_name** | **String** |  | [required] |
 **parties** | Option<[**Vec<String>**](String.md)> |  |  |
-**vetting_valid_at** | Option<**chrono::DateTime<chrono::FixedOffset>**> |  |  |
+**vetting_valid_at** | Option<**jiff::Timestamp**> |  |  |
 **synchronizer_id** | Option<**String**> |  |  |
 
 ### Return type
